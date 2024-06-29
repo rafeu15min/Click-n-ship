@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw6wrfey7fklh"]
+[gd_scene load_steps=8 format=3 uid="uid://dw6wrfey7fklh"]
 
 [ext_resource type="Texture2D" uid="uid://djwti7xy0q1gm" path="res://ship.svg" id="1_i2qne"]
 [ext_resource type="Texture2D" uid="uid://q4rjokycp6ub" path="res://bullet_frames/frame1.svg" id="2_e2gei"]
-[ext_resource type="Script" path="res://Bullet.gd" id="2_krdso"]
 [ext_resource type="Texture2D" uid="uid://ei8o8dn7fdg4" path="res://bullet_frames/frame2.svg" id="3_mcr46"]
 [ext_resource type="Texture2D" uid="uid://dw5bwccco6ya8" path="res://bullet_frames/frame3.svg" id="4_2rnpg"]
 [ext_resource type="Texture2D" uid="uid://d0wwpe6ji17v4" path="res://bullet_frames/frame4.svg" id="5_vhexp"]
@@ -64,7 +63,6 @@ polygon = PackedVector2Array(653, 319, 621, 335, 604, 352, 604, 343, 587, 352, 6
 position = Vector2(32, 0)
 
 [node name="Bullet" type="Area2D" parent="."]
-script = ExtResource("2_krdso")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bullet"]
 position = Vector2(509, 290)
