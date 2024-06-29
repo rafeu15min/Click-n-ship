@@ -18,6 +18,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
+name = "gdext"
+version = "0.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bfc0e43dd643c34199b0dc75926297dcf53bfa7cac29c918c8ad7ea5b6bdece6"
+
+[[package]]
 name = "gdextension-api"
 version = "0.1.0"
 source = "git+https://github.com/godot-rust/godot4-prebuilt?branch=releases#e3c0d8d397a593aa23da4a19b535c959754f3604"
@@ -211,6 +217,7 @@ checksum = "7a66a03ae7c801facd77a29370b4faec201768915ac14a721ba36f20bc9c209b"
 name = "rust_project"
 version = "0.1.0"
 dependencies = [
+ "gdext",
  "godot",
 ]
 

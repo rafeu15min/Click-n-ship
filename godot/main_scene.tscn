@@ -1,31 +1,76 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw6wrfey7fklh"]
+[gd_scene load_steps=9 format=3 uid="uid://dw6wrfey7fklh"]
 
 [ext_resource type="Texture2D" uid="uid://djwti7xy0q1gm" path="res://ship.svg" id="1_i2qne"]
+[ext_resource type="Texture2D" uid="uid://q4rjokycp6ub" path="res://bullet_frames/frame1.svg" id="2_e2gei"]
+[ext_resource type="Script" path="res://Bullet.gd" id="2_krdso"]
+[ext_resource type="Texture2D" uid="uid://ei8o8dn7fdg4" path="res://bullet_frames/frame2.svg" id="3_mcr46"]
+[ext_resource type="Texture2D" uid="uid://dw5bwccco6ya8" path="res://bullet_frames/frame3.svg" id="4_2rnpg"]
+[ext_resource type="Texture2D" uid="uid://d0wwpe6ji17v4" path="res://bullet_frames/frame4.svg" id="5_vhexp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qf6bg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e2gei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mcr46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2rnpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vhexp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yplxe"]
+radius = 6.0
 
 [node name="MainScene" type="Node2D"]
 
-[node name="Universe" type="ColorRect" parent="."]
+[node name="Color" type="ColorRect" parent="."]
+visible = false
 clip_contents = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 1980.0
-offset_bottom = 977.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 1950.0
+offset_bottom = 950.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" type="Player" parent="."]
+speed = 1000.0
 position = Vector2(620, 319)
 motion_mode = 1
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player"]
 texture = ExtResource("1_i2qne")
 
-[node name="PlayerCollisor" type="CollisionPolygon2D" parent="Player"]
-position = Vector2(-621.074, -319)
-scale = Vector2(1.00189, 1)
+[node name="PlayerCollider" type="CollisionPolygon2D" parent="Player"]
+position = Vector2(-622.336, -319)
+scale = Vector2(1.00377, 1)
 polygon = PackedVector2Array(653, 319, 621, 335, 604, 352, 604, 343, 587, 352, 601, 325, 588, 319, 602, 313, 602, 313, 588, 287, 604, 296, 604, 287, 621, 303)
+
+[node name="Marker2D" type="Marker2D" parent="Player"]
+position = Vector2(32, 0)
+
+[node name="Bullet" type="Area2D" parent="."]
+script = ExtResource("2_krdso")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bullet"]
+position = Vector2(509, 290)
+sprite_frames = SubResource("SpriteFrames_qf6bg")
+frame_progress = 0.211072
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+position = Vector2(509, 290)
+shape = SubResource("CircleShape2D_yplxe")
