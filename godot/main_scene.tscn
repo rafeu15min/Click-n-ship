@@ -19,7 +19,6 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" type="Player" parent="."]
-speed = 600.0
 position = Vector2(620, 319)
 motion_mode = 1
 
