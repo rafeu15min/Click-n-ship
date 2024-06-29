@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw6wrfey7fklh"]
+
+[ext_resource type="Texture2D" uid="uid://djwti7xy0q1gm" path="res://ship.svg" id="1_i2qne"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Universe" type="ColorRect" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 1980.0
+offset_bottom = 977.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" type="Player" parent="."]
+speed = 600.0
+position = Vector2(620, 319)
+motion_mode = 1
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_i2qne")
+
+[node name="PlayerCollisor" type="CollisionPolygon2D" parent="Player"]
+position = Vector2(-621.074, -319)
+scale = Vector2(1.00189, 1)
+polygon = PackedVector2Array(653, 319, 621, 335, 604, 352, 604, 343, 587, 352, 601, 325, 588, 319, 602, 313, 602, 313, 588, 287, 604, 296, 604, 287, 621, 303)
