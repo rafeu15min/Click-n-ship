@@ -28,7 +28,10 @@ project/assembly_name="First Project"
 [layer_names]
 
 2d_render/layer_1="player"
-2d_render/layer_2="universe"
+2d_render/layer_2="bullet"
+2d_render/layer_3="tiny_meteor"
+2d_render/layer_4="normal_meteor"
+2d_render/layer_5="big_meteor"
 
 [physics]
 

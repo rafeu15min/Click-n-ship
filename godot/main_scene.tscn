@@ -32,7 +32,6 @@ radius = 6.0
 [node name="MainScene" type="Node2D"]
 
 [node name="Color" type="ColorRect" parent="."]
-visible = false
 clip_contents = true
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,6 +47,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Player" type="Player" parent="."]
 speed = 1000.0
+max_acceleration = 1.5
 position = Vector2(620, 319)
 motion_mode = 1
 
@@ -62,13 +62,15 @@ polygon = PackedVector2Array(653, 319, 621, 335, 604, 352, 604, 343, 587, 352, 6
 [node name="Marker2D" type="Marker2D" parent="Player"]
 position = Vector2(32, 0)
 
-[node name="Bullet" type="Area2D" parent="."]
+[node name="Bullet" type="Bullet" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bullet"]
-position = Vector2(509, 290)
+position = Vector2(622, 319)
 sprite_frames = SubResource("SpriteFrames_qf6bg")
 frame_progress = 0.211072
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
-position = Vector2(509, 290)
+position = Vector2(622, 319)
 shape = SubResource("CircleShape2D_yplxe")
